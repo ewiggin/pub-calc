@@ -3,11 +3,12 @@ template.innerHTML = /*html*/ `
       <div style="display: flex; flex-direction: column; gap: 20px; font-family: system-ui; justify-content: flex-start;     align-items: center; ">
         <div style="width: 100%">
           <input
-              style="width: 98%; padding: 10px; border: 1px solid #222; border-radius: 5px;"
+              style="width: 98%; font-size: 16px;  padding: 10px; border: 1px solid #222; border-radius: 5px;"
               id="size"
               name="value"
               placeholder="Centímetros"
               type="number"
+              pattern="[0-9]*"
               min="0"
               />
         </div>
