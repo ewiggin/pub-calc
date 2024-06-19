@@ -9,6 +9,7 @@ template.innerHTML = /*html*/ `
               placeholder="Centímetros"
               type="number"
               pattern="[0-9]*"
+              inputmode="decimal"
               min="0"
               />
         </div>
