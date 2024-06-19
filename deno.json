@@ -1,7 +1,7 @@
 {
   "tasks": {
     "dev": "deno run --allow-net --allow-read=./index.html,./public/main.js --watch main.ts",
-    "build": "deno run --allow-net --allow-read=./index.html,./public/main.js main.ts build"
+    "build": "deno build --allow-net --allow-read=./index.html,./public/main.js main.ts"
   },
   "deploy": {
     "project": "bc11a9c9-4cd0-4622-86b1-5a29fc98d21f",
