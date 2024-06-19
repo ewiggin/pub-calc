@@ -1,24 +1,21 @@
 const template = document.createElement("template");
 template.innerHTML = /*html*/ `
-      <div style="display: flex; flex-direction: row; gap: 20px; font-family: system-ui; justify-content: flex-start;     align-items: center; ">
-      <div>
-      <input
-          style="padding: 10px; border: 1px solid #222; border-radius: 5px;"
-          id="size"
-          name="value"
-          placeholder="Add size (cm)"
-          type="number"
-          min="0"
-          />
-          cm
-          </div>
-      <div style="font-size: 2rem">
-      👉
-      </div>
-      <div style="font-weight: bold">
-      <span id="result">0</span>
-      <span>pubs.</span>
-      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px; font-family: system-ui; justify-content: flex-start;     align-items: center; ">
+        <div style="width: 100%">
+          <input
+              style="width: 98%; padding: 10px; border: 1px solid #222; border-radius: 5px;"
+              id="size"
+              name="value"
+              placeholder="Centímetros"
+              type="number"
+              min="0"
+              />
+        </div>
+        <div style="font-size: 2rem"> 👇 </div>
+        <div style=" font-size: 2rem;" >
+          <span style="font-weight: bold;" id="result">0</span>
+          <span>Publicaciones</span>
+        </div>
       </div>
 `;
 
@@ -46,7 +43,9 @@ class PublicationsCalculator extends HTMLElement {
     // 2,5 --> 300 pub.
     const value = $event.target?.value ?? 0;
     const result = value ? value * 300 / 2.5 : 0;
-    this.shadowRoot.getElementById("result").innerHTML = result;
+    this.shadowRoot.getElementById("result").innerHTML = Intl.NumberFormat(
+      "es-ES",
+    ).format(result);
   }
 }
 
